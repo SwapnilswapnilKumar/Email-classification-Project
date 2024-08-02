@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Message Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            
+            background: linear-gradient(to right, rgb(227, 230, 221), rgb(175, 238, 213));
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+          font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 1000px;
+            height:600px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="email"], input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 300px;
+            width:100%;
+            /* resize: none; */
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(153, 171, 243);
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: rgb(103, 129, 234);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Email Classification Project</h2>
+        <form action="{{ url_for('prediction') }}" method="POST">
+            
+            <div class="form-group">
+                <label for="message">Write your Email Message here</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Click here to check if the email is spam or ham</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
